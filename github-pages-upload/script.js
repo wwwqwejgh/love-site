@@ -1,5 +1,5 @@
 const SUPABASE_CONFIG = {
-  url: "https://snzhrognrosbmeywujev.supabase.co/rest/v1/",
+  url: "https://snzhrognrosbmeywujev.supabase.co",
   anonKey: "sb_publishable_vNat6eXTH-sw2buiExlkew_Ptyyat7L",
   photoBucket: "love-photos",
 };
