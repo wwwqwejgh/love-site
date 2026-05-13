@@ -1,6 +1,6 @@
 const SUPABASE_CONFIG = {
-  url: "PASTE_YOUR_SUPABASE_PROJECT_URL",
-  anonKey: "PASTE_YOUR_SUPABASE_ANON_KEY",
+  url: "https://snzhrognrosbmeywujev.supabase.co/rest/v1/",
+  anonKey: "sb_publishable_vNat6eXTH-sw2buiExlkew_Ptyyat7L",
   photoBucket: "love-photos",
 };
 
