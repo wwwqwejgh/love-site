@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="给我们两个人的恋爱纪念网站，记录相遇、纪念日、照片和悄悄话。"
+    />
+    <title>我们的恋爱小站</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=ZCOOL+XiaoWei&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas class="petal-canvas" id="petalCanvas" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="回到顶部">
+        <span class="brand-mark">L</span>
+        <span>Love Log</span>
+      </a>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#story">时间线</a>
+        <a href="#gallery">照片</a>
+        <a href="#notes">便签</a>
+        <a href="#promise">约定</a>
+      </nav>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="切换主题">
+        <span class="icon" aria-hidden="true">☾</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero-section" aria-labelledby="heroTitle">
+        <div class="hero-copy">
+          <p class="eyebrow">Our little universe</p>
+          <h1 id="heroTitle"><span id="nameA">吴凡</span> 和 <span id="nameB">我的女朋友</span></h1>
+          <p class="hero-text">
+            把普通日子一点点收藏起来。今天也很喜欢你，明天也是。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#gallery">看我们的相册</a>
+            <a class="secondary-action" href="#notes">写一句悄悄话</a>
+          </div>
+        </div>
+
+        <div class="cover-panel" aria-label="恋爱纪念卡片">
+          <div class="cover-art">
+            <img src="./assets/couple-mark.svg" alt="两个人在月光下相互靠近的插画" />
+          </div>
+          <div class="days-card">
+            <span class="label">在一起</span>
+            <strong id="daysTogether">0</strong>
+            <span class="unit">天</span>
+          </div>
+          <div class="next-card">
+            <span class="label">下一个纪念日</span>
+            <strong id="anniversaryCountdown">计算中</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-band" aria-label="恋爱数据">
+        <article>
+          <span>第一次见面</span>
+          <strong id="firstMeetDate">2024.05.20</strong>
+        </article>
+        <article>
+          <span>恋爱纪念日</span>
+          <strong id="loveDate">2024.08.08</strong>
+        </article>
+        <article>
+          <span>今年目标</span>
+          <strong>一起旅行 1 次</strong>
+        </article>
+      </section>
+
+      <section class="section story-section" id="story" aria-labelledby="storyTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Milestones</p>
+          <h2 id="storyTitle">我们的时间线</h2>
+        </div>
+        <div class="timeline" id="timelineList"></div>
+      </section>
+
+      <section class="section gallery-section" id="gallery" aria-labelledby="galleryTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Album</p>
+          <h2 id="galleryTitle">照片墙</h2>
+        </div>
+        <div class="gallery-toolbar">
+          <label class="upload-button" for="photoInput">添加照片</label>
+          <input id="photoInput" type="file" accept="image/*" multiple />
+          <button class="ghost-button" id="clearPhotos" type="button">清空本地照片</button>
+        </div>
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </section>
+
+      <section class="section notes-section" id="notes" aria-labelledby="notesTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Letters</p>
+          <h2 id="notesTitle">给对方的便签</h2>
+        </div>
+        <div class="note-composer">
+          <textarea
+            id="noteInput"
+            maxlength="120"
+            placeholder="写一句只有你们懂的话..."
+            aria-label="写一条恋爱便签"
+          ></textarea>
+          <button class="primary-action" id="addNote" type="button">保存便签</button>
+        </div>
+        <div class="notes-list" id="notesList"></div>
+      </section>
+
+      <section class="section promise-section" id="promise" aria-labelledby="promiseTitle">
+        <div class="promise-copy">
+          <p class="eyebrow">Promise</p>
+          <h2 id="promiseTitle">一些认真又可爱的约定</h2>
+          <p>
+            不是每一天都要轰轰烈烈，但每一天都要好好说话、认真拥抱、把对方放在心上。
+          </p>
+        </div>
+        <ul class="promise-list">
+          <li>每月至少安排一次专属约会</li>
+          <li>吵架不过夜，先抱抱再讲道理</li>
+          <li>每年拍一张同款合照</li>
+          <li>一起把想去的地方慢慢走完</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Made for us</span>
+      <span id="currentYear"></span>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
