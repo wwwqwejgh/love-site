@@ -1,15 +1,16 @@
 const CONFIG = {
-  names: ["吴凡", "我的女朋友"],
-  firstMeet: "2024-05-20",
-  loveDate: "2024-08-08",
+  names: ["小凡", "小拉"],
+  firstMeet: "2014-01-01",
+  firstMeetDisplay: "2014年",
+  loveDate: "2023-07-23",
   timeline: [
     {
-      date: "2024.05.20",
+      date: "2014",
       title: "第一次认真记住彼此",
       text: "那天之后，很多普通瞬间都开始有了特别的意义。",
     },
     {
-      date: "2024.08.08",
+      date: "2023.07.23",
       title: "正式在一起",
       text: "从这一天开始，我们有了一个共同的名字：我们。",
     },
@@ -91,7 +92,7 @@ function writeJson(key, value) {
 function renderBasics() {
   $("#nameA").textContent = CONFIG.names[0];
   $("#nameB").textContent = CONFIG.names[1];
-  $("#firstMeetDate").textContent = formatDate(CONFIG.firstMeet);
+  $("#firstMeetDate").textContent = CONFIG.firstMeetDisplay ?? formatDate(CONFIG.firstMeet);
   $("#loveDate").textContent = formatDate(CONFIG.loveDate);
   $("#daysTogether").textContent = dayDiff(CONFIG.loveDate).toString();
   $("#anniversaryCountdown").textContent = getNextAnniversary();
